@@ -1,2 +1,3 @@
-# React_JS
-模仿简书的demo
+# 模仿模拟简书的网站
+#### css文件 一旦在一个文件被引入后 是在全局都生效的
+### 不建议在react直接引入CSS，建议使用第三方库styled-components进行样式管理
