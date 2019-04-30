@@ -1,13 +1,13 @@
 import React from 'react';
 import {GlobalStyle} from "./style";
-
+import Header from './commom/header'
 function App() {
   return (
    
-      <div className='new'>
-      <GlobalStyle/>
-      hellow world
-      </div>
+      <Header className='new'>
+        <GlobalStyle/>
+      
+      </Header>
    
   
   );
