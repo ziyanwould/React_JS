@@ -3,11 +3,13 @@ import {GlobalStyle} from "./style";
 import Header from './commom/header'
 function App() {
   return (
-   
-      <Header className='new'>
-        <GlobalStyle/>
+     <div>
+     <GlobalStyle/>
+       <Header className='new'>
+       </Header>
+     
+     </div>
       
-      </Header>
    
   
   );

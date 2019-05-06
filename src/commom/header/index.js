@@ -1,10 +1,18 @@
 import React, { Component } from 'react' ;
-
+import {
+    HeaderWrapper,
+    Logo,
+    Nav
+} from './style' ;
 class Header extends Component{
     render(){
         return (
 
-            <div>header</div>
+            <HeaderWrapper>
+             <Logo />
+             <Nav />
+             
+            </HeaderWrapper>
         )
     }
     
