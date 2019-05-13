@@ -47,6 +47,8 @@ export const NavItem =  styled.div`
 export const SearchWrapper = styled.div`
     float:left;
     position:relative;
+
+   
     .iconfont{
       position:absolute;
       right:5px;
@@ -56,6 +58,10 @@ export const SearchWrapper = styled.div`
       border-radius:15px;
       /* background:green; */
       text-align:center;
+      &.focused{
+        background:#777;
+        color:#FFF;
+      }
     }
 `;
 export const NavSearch = styled.input.attrs({
@@ -64,7 +70,7 @@ export const NavSearch = styled.input.attrs({
  margin-top:9px;
  width:160px;
  height:38px;
- padding:0 20px;
+ padding:0 30px 0 20px;
  margin-left:20px;
  box-sizing:border-box;/*防止那个padding 把宽度撑高*/
  border:none;
@@ -72,9 +78,24 @@ export const NavSearch = styled.input.attrs({
  border-radius:19px;
  background:#eee;
  font-size:14px; 
+ color:#666;
  &::placeholder{
    color: #999;
  }
+ &.focused{
+   width:240px;
+   
+ }
+ &.slide{
+    
+    transition:all .2s ease-out;
+  }
+&.enter-done{
+  width:240px;
+}
+&..exit-done{
+  width:160px;
+}
 `;
 
 export const Addition = styled.div`
