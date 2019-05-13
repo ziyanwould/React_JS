@@ -71,3 +71,9 @@
      注意：在这里清除一些不需要的监听和计时器
 
 
+
+
+# immutable.js
+
+  数据不可改变 用来初始化state 防止改到state值
+  把数据变成immutable对象
