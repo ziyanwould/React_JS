@@ -10,9 +10,36 @@ import {
     NavSearch,
     SearchWrapper,
     Addition,
-    Button
+    SearchInfoTitle,
+    Button,
+    SearchInfoSwitch,
+    SearchInfoItem,
+    SearchInfoList,
+    SearchInfo
 } from './style' ;
 
+const getListArea = (show) =>{
+    if(show){
+        return(
+            <SearchInfo>
+            <SearchInfoTitle>
+                热门搜索
+                <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            </SearchInfoTitle>
+            <SearchInfoList>
+                <SearchInfoItem>教育</SearchInfoItem>
+                <SearchInfoItem>教育</SearchInfoItem>
+                <SearchInfoItem>教育</SearchInfoItem>
+                <SearchInfoItem>教育</SearchInfoItem>
+                <SearchInfoItem>教育</SearchInfoItem>
+                <SearchInfoItem>教育</SearchInfoItem>
+            </SearchInfoList>
+        </SearchInfo>
+        )
+    }else{
+        return null
+    }
+}
 const Header = (props) =>{
     return (
 
@@ -38,6 +65,10 @@ const Header = (props) =>{
                         ></NavSearch>
                     </CSSTransition>
                     <i className={props.focused ? 'focused iconfont':'iconfont'}>&#xe637;</i>
+
+                    {
+                        getListArea(props.focused)
+                    }
                 </SearchWrapper>
              
             </Nav>
@@ -53,7 +84,10 @@ const Header = (props) =>{
 const mapStateToProps =(state) =>{
  return{
      //immutable 需要用.get()方法来获取属性值
-    focused :state.header.get('focused')
+     //使用 redux-immutable 让state 变成immutable 对象
+    //focused :state.get('header').get('focused')连续 使用推荐 以下写法
+    focused:state.getIn(['header','focused'])
+
  }
 }
 
