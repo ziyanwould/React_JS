@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
+import {connect} from 'react-redux';
 import List from './components/List';
 import Recommend from './components/Recommend';
 import Topic from './components/Topic';
 import Writer from './components/Writer';
+import axios from 'axios';
 import {
     HomeWrapper,
     HomeLeft,
@@ -26,6 +28,24 @@ class Home extends Component {
             </HomeWrapper>
         )
     }
+    //通过生命周期函数来发送ajax请求
+    componentDidMount(){
+        axios.get('/api/home.json').then((res) =>{
+            const result = res.data.data;
+            const action ={
+                type:'change_home_data',
+                articleList:result.articleList,
+                recommendList:result.recommendList,
+                topicList:result.topicList
+            }
+           this.props.changeHomeData(action)
+        })
+    }
 }
+const mapDispath = (dispatch) => ({
+    changeHomeData(action){
+        dispatch(action);
+    }
+});
 
-export default Home;
+export default connect(null,mapDispath)(Home);
