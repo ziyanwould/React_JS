@@ -77,3 +77,11 @@
 
   数据不可改变 用来初始化state 防止改到state值
   把数据变成immutable对象
+
+
+#PureComponent 替代 Component 做了性能优化（与 immutable.js配合度好 可以毫无顾忌用）
+
+
+##   <Link key={index} to={'./detail/' +item.get('id')}>{/*动态路由获取方式*/}  取值：this.props.match.params.id  
+
+##   <Link key={index} to={'./detail？' +item.get('id')}>{/*动态路由获取方式*/}  取值：this.props.location.search
