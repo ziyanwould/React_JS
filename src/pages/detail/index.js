@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';//解决异步组件 获取不到路由参数问题 获取loadable.js路由内容
 import { DetailWrapper, Header, Content } from './style';
 import { actionCreators } from './store';
 
 class Detail extends PureComponent {
+
 	render() {
 		//console.log(this.props.match.params.id)
 		return (

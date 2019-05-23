@@ -14,7 +14,7 @@ export const getDetail = (id) => {
 			//console.log(result)
 			dispatch(changeDetail(result.title, result.content));
 		}).catch(() => {
-			
+			console.log('api err')
 		})
 	}
 };
